@@ -21,7 +21,7 @@ Via postman type in API `http://localhost:8000/parking` and select method `POST`
 | licencePlate  | string  | no  |   
 | size  | string  | no  |   |   |
 | fuel  | object  | no  |   |   |
-|   |   |   |   |   |
+
 
 ### Technologies used
 - golang
