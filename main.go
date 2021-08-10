@@ -30,6 +30,15 @@ type Assignment struct {
 var SMALL = "small"
 var PARK_RATE_SMALL float64 = 25
 var PARK_RATE_LARGE float64 = 35
+var EMPLOYEE_A = "Employee A"
+var EMPLOYEE_B = "Employee B"
+
+func AssignEmployee(size string, fuelAdded float64) string {
+	if size != SMALL && fuelAdded > 0 {
+		return EMPLOYEE_B
+	}
+	return EMPLOYEE_A
+}
 
 func GetParkingRate(size string) float64 {
 	if size == SMALL {
@@ -44,7 +53,6 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 func ParkingHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprint(w, "Called")
 
 	var assignments []Assignment
 	var items []Parking
@@ -64,11 +72,9 @@ func ParkingHandler(w http.ResponseWriter, r *http.Request) {
 			price = litersRefueled * 1.75
 		}
 
-		fmt.Println(litersRefueled)
-
 		assignments = append(assignments, Assignment{
 			LicencePlate: licencePlate,
-			Employee:     "AAAA",
+			Employee:     AssignEmployee(size, price),
 			FuelAdded:    litersRefueled,
 			Price:        GetParkingRate(size) + price,
 		})
