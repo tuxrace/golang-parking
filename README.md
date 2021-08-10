@@ -16,11 +16,11 @@ Via postman type in API `http://localhost:8000/parking` and select method `POST`
 
 ### Parking payload array
 
-| name  | type  | optional  |   |   |
-|---|---|---|---|---|
-| licencePlate  | string  | no  |   
-| size  | string  | no  |   |   |
-| fuel  | object  | no  |   |   |
+| name  | type  | optional  |     |
+|---|---|---|---|
+| licencePlate  | string  | no     
+| size  | string  | no  |   |   
+| fuel  | object  | no  |   |   
 
 
 ### Technologies used
