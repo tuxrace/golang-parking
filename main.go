@@ -31,10 +31,10 @@ var SMALL = "small"
 var PARK_RATE_SMALL float64 = 25
 var PARK_RATE_LARGE float64 = 35
 var FUEL_RATE = 1.75
-var EMPLOYEE_A = "Employee A"
-var EMPLOYEE_B = "Employee B"
 
 func AssignEmployee(size string, fuelAdded float64) string {
+	EMPLOYEE_A := "Employee A"
+	EMPLOYEE_B := "Employee B"
 	if size != SMALL && fuelAdded > 0 {
 		return EMPLOYEE_B
 	}
