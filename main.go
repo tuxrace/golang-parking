@@ -30,6 +30,7 @@ type Assignment struct {
 var SMALL = "small"
 var PARK_RATE_SMALL float64 = 25
 var PARK_RATE_LARGE float64 = 35
+var FUEL_RATE = 1.75
 var EMPLOYEE_A = "Employee A"
 var EMPLOYEE_B = "Employee B"
 
@@ -69,7 +70,7 @@ func ParkingHandler(w http.ResponseWriter, r *http.Request) {
 		if level < 0.1 {
 			litersLeft := ((level * 100) / 100) * capacity
 			litersRefueled = capacity - litersLeft
-			price = litersRefueled * 1.75
+			price = litersRefueled * FUEL_RATE
 		}
 
 		assignments = append(assignments, Assignment{
