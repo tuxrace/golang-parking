@@ -10,7 +10,7 @@ With a proper golang setup type `go mod init`
 ## Running the api
 
 - On the terminal type`go run main.go`
-- Via postman type in API `http://localhost:8000/parking` and select method `POST`
+- Via postman type in API `http://localhost:8000/parking` use method `POST`
 
 ## API usage
 
