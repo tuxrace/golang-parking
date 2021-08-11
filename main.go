@@ -28,8 +28,6 @@ type Assignment struct {
 }
 
 var SMALL = "small"
-var PARK_RATE_SMALL float64 = 25
-var PARK_RATE_LARGE float64 = 35
 var FUEL_RATE = 1.75
 
 func AssignEmployee(size string, fuelAdded float64) string {
@@ -42,6 +40,8 @@ func AssignEmployee(size string, fuelAdded float64) string {
 }
 
 func GetParkingRate(size string) float64 {
+	var PARK_RATE_SMALL float64 = 25
+	var PARK_RATE_LARGE float64 = 35
 	if size == SMALL {
 		return PARK_RATE_SMALL
 	}
