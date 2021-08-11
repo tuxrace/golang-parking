@@ -16,11 +16,11 @@ With a proper golang setup type `go mod init`
 
 ### Parking payload array
 
-| name  | type  | optional  |     |
-|---|---|---|---|
+| name  | type  | optional  |     
+|---|---|---|
 | licencePlate  | string  | no     
-| size  | string  | no  |   |   
-| fuel  | object  | no  |   |   
+| size  | string  | no  |      
+| fuel  | object  | no  |      
 
 
 ### Technologies used
