@@ -48,6 +48,11 @@ func GetParkingRate(size string) float64 {
 	return PARK_RATE_LARGE
 }
 
+func CalculateLitersRefueled(capacity float64, level float64) float64 {
+	litersLeft := ((level * 100) / 100) * capacity
+	return capacity - litersLeft
+}
+
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Home")
 }
@@ -68,8 +73,7 @@ func ParkingHandler(w http.ResponseWriter, r *http.Request) {
 		size := items[i].Size
 
 		if level < 0.1 {
-			litersLeft := ((level * 100) / 100) * capacity
-			litersRefueled = capacity - litersLeft
+			litersRefueled = capacity - CalculateLitersRefueled(capacity, level)
 			price = litersRefueled * FUEL_RATE
 		}
 
